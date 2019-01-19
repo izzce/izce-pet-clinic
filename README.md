@@ -1,2 +1,2 @@
 # izce-pet-clinic
-Izce Pet Clinic
+Izce Pet Clinic Project
