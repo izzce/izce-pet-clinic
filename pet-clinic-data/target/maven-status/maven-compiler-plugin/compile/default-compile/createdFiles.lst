@@ -1,0 +1,6 @@
+org\izce\petclinic\data\model\Person.class
+org\izce\petclinic\data\App.class
+org\izce\petclinic\data\model\PetType.class
+org\izce\petclinic\data\model\Owner.class
+org\izce\petclinic\data\model\Pet.class
+org\izce\petclinic\data\model\Vet.class

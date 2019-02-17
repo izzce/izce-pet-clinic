@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.izce.petclinic.web.PetClinicApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.903 s - in org.izce.petclinic.web.PetClinicApplicationTests
