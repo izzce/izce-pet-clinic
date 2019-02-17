@@ -1,4 +1,4 @@
-package org.izce.petclinic.model;
+package org.izce.petclinic.data.model;
 
 public class Person {
 	private String firstName;

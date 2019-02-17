@@ -1,13 +1,13 @@
-package org.izce.petclinic;
+package org.izce.petclinic.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class IzcePetClinicApplication {
+public class PetClinicApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(IzcePetClinicApplication.class, args);
+		SpringApplication.run(PetClinicApplication.class, args);
 	}
 
 }

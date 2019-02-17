@@ -1,4 +1,4 @@
-package org.izce.petclinic.model;
+package org.izce.petclinic.data.model;
 
 public class PetType {
 	private String name;
