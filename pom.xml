@@ -10,7 +10,7 @@
 
 	<groupId>org.izce</groupId>
 	<artifactId>izce-pet-clinic</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>izce-pet-clinic</name>
 	<description>Izce Pet Clinic Project</description>
 	<packaging>pom</packaging>
@@ -49,7 +49,7 @@
 
 	<scm>
 		<developerConnection>scm:git:https://github.com/izzce/izce-pet-clinic.git</developerConnection>
-	  <tag>izce-pet-clinic-0.0.1</tag>
+	  <tag>HEAD</tag>
   </scm>
 
 </project>
