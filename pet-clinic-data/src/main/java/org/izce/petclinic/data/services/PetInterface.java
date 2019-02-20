@@ -4,11 +4,6 @@ import java.util.Set;
 
 import org.izce.petclinic.data.model.Pet;
 
-public interface PetInterface {
+public interface PetInterface extends CrudService<Pet, Long>{
 
-	Pet findById(Long Id);
-
-	Pet save(Pet pet);
-
-	Set<Pet> findAll();
 }
