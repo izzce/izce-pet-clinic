@@ -2,7 +2,6 @@ package org.izce.petclinic.data.services;
 
 import java.util.Set;
 
-import org.izce.petclinic.data.model.Owner;
 
 public interface CrudService<T, ID> {
 
