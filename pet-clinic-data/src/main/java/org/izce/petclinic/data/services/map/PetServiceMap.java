@@ -1,9 +1,9 @@
 package org.izce.petclinic.data.services.map;
 
 import org.izce.petclinic.data.model.Pet;
-import org.izce.petclinic.data.services.PetInterface;
+import org.izce.petclinic.data.services.PetService;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetInterface {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 	
 	@Override
 	public Pet save(Pet pet) {

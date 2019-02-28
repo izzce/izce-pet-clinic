@@ -4,6 +4,6 @@ import java.util.Set;
 
 import org.izce.petclinic.data.model.Pet;
 
-public interface PetInterface extends CrudService<Pet, Long>{
+public interface PetService extends CrudService<Pet, Long>{
 
 }

@@ -1,9 +1,9 @@
 package org.izce.petclinic.data.services.map;
 
 import org.izce.petclinic.data.model.Owner;
-import org.izce.petclinic.data.services.OwnerInterface;
+import org.izce.petclinic.data.services.OwnerService;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerInterface {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 	
 	@Override
 	public Owner save(Owner owner) {
