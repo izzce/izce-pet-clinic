@@ -1,11 +1,10 @@
-package org.izce.petclinic.web.bootstrap;
+package org.izce.petclinic.bootstrap;
 
-import org.izce.petclinic.data.model.Owner;
-import org.izce.petclinic.data.model.Vet;
-import org.izce.petclinic.data.services.OwnerService;
-import org.izce.petclinic.data.services.VetService;
-import org.izce.petclinic.data.services.map.OwnerServiceMap;
-import org.izce.petclinic.data.services.map.VetServiceMap;
+import org.izce.petclinic.model.Owner;
+import org.izce.petclinic.model.Vet;
+import org.izce.petclinic.services.OwnerService;
+import org.izce.petclinic.services.VetService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -14,9 +13,10 @@ public class DataLoader implements CommandLineRunner {
 	private final OwnerService ownerService;
 	private final VetService vetService;
 	
-	public DataLoader() {
-		ownerService = new OwnerServiceMap();
-		vetService = new VetServiceMap();
+	@Autowired
+	public DataLoader(OwnerService ownerService, VetService vetService) {
+		this.ownerService = ownerService;
+		this.vetService = vetService;
 	}
 
 	@Override

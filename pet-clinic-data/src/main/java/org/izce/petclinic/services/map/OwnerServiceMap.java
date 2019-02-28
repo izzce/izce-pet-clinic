@@ -1,8 +1,10 @@
-package org.izce.petclinic.data.services.map;
+package org.izce.petclinic.services.map;
 
-import org.izce.petclinic.data.model.Owner;
-import org.izce.petclinic.data.services.OwnerService;
+import org.izce.petclinic.model.Owner;
+import org.izce.petclinic.services.OwnerService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 	
 	@Override

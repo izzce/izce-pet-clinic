@@ -1,4 +1,4 @@
-package org.izce.petclinic.data.services;
+package org.izce.petclinic.services;
 
 import java.util.Set;
 

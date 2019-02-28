@@ -1,4 +1,4 @@
-package org.izce.petclinic.web;
+package org.izce.petclinic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

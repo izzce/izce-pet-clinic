@@ -1,4 +1,4 @@
-package org.izce.petclinic.data.model;
+package org.izce.petclinic.model;
 
 import java.time.LocalDate;
 

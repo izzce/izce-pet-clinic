@@ -1,4 +1,4 @@
-package org.izce.petclinic.web.controllers;
+package org.izce.petclinic.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

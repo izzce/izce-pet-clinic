@@ -1,11 +1,11 @@
-package org.izce.petclinic.data.services.map;
+package org.izce.petclinic.services.map;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import org.izce.petclinic.data.services.CrudService;
+import org.izce.petclinic.services.CrudService;
 
 public abstract class AbstractMapService<T, ID> implements CrudService<T, ID>{
 	protected Map<ID, T> map = new HashMap<>();
