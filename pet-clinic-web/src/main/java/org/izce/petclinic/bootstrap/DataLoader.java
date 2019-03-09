@@ -1,6 +1,9 @@
 package org.izce.petclinic.bootstrap;
 
+import java.time.LocalDate;
+
 import org.izce.petclinic.model.Owner;
+import org.izce.petclinic.model.Pet;
 import org.izce.petclinic.model.PetType;
 import org.izce.petclinic.model.Vet;
 import org.izce.petclinic.services.OwnerService;
@@ -36,11 +39,32 @@ public class DataLoader implements CommandLineRunner {
 		Owner owner1 = new Owner();
 		owner1.setFirstName("Ayşe");
 		owner1.setLastName("Bacı");
+		owner1.setAddress("Necati Bey Cad.");
+		owner1.setCity("İstanbul");
+		owner1.setTelephone("123456789");
+		Pet aysesPet = new Pet();
+		aysesPet.setName("Kuçu");
+		aysesPet.setPetType(savedDogPetType);
+		aysesPet.setOwner(owner1);
+		aysesPet.setBirthday(LocalDate.now());
+		owner1.getPets().add(aysesPet);
+		
 		ownerService.save(owner1);
 		
 		Owner owner2 = new Owner();
 		owner2.setFirstName("Fatma");
 		owner2.setLastName("Hanım");
+		owner2.setAddress("Karamazak Cad.");
+		owner2.setCity("Bursa");
+		owner2.setTelephone("987654321");
+		
+		Pet fatmasCat = new Pet();
+		fatmasCat.setName("Pisi");
+		fatmasCat.setPetType(savedCatPetType);
+		fatmasCat.setOwner(owner2);
+		fatmasCat.setBirthday(LocalDate.now());
+		owner2.getPets().add(fatmasCat);
+		
 		ownerService.save(owner2);
 		
 		System.out.println("Loaded owners!");
@@ -56,6 +80,8 @@ public class DataLoader implements CommandLineRunner {
 		vetService.save(vet2);
 		
 		System.out.println("Loaded vets!");
+
 	}
 
 }
+
