@@ -7,10 +7,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class VisitServiceMap extends AbstractMapService<Visit, Long> implements VisitService {
 	
-	public VisitServiceMap() {
-		
-	}
-	
 	@Override
 	public Visit save(Visit visit) {
 		if (visit.getPet() == null || visit.getPet().getId() == null 
