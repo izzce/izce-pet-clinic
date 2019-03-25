@@ -7,10 +7,12 @@ import org.izce.petclinic.model.Pet;
 import org.izce.petclinic.model.PetType;
 import org.izce.petclinic.model.Specialty;
 import org.izce.petclinic.model.Vet;
+import org.izce.petclinic.model.Visit;
 import org.izce.petclinic.services.OwnerService;
 import org.izce.petclinic.services.PetTypeService;
 import org.izce.petclinic.services.SpecialtyService;
 import org.izce.petclinic.services.VetService;
+import org.izce.petclinic.services.VisitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -21,14 +23,21 @@ public class DataLoader implements CommandLineRunner {
 	private final VetService vetService;
 	private final PetTypeService petTypeService;
 	private final SpecialtyService specialtyService;
+	private final VisitService visitService;
+	
 	private boolean loaded = false;
 	
 	@Autowired
-	public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+	public DataLoader(OwnerService ownerService, 
+			VetService vetService, 
+			PetTypeService petTypeService, 
+			SpecialtyService specialtyService,
+			VisitService visitService) {
 		this.ownerService = ownerService;
 		this.vetService = vetService;
 		this.petTypeService = petTypeService;
 		this.specialtyService = specialtyService;
+		this.visitService = visitService;
 	}
 
 	@Override
@@ -76,8 +85,13 @@ public class DataLoader implements CommandLineRunner {
 		aysesPet.setOwner(owner1);
 		aysesPet.setBirthdate(LocalDate.now());
 		owner1.getPets().add(aysesPet);
-		
 		ownerService.save(owner1);
+		
+		Visit aysesPetVisit = new Visit();
+		aysesPetVisit.setPet(aysesPet);
+		aysesPetVisit.setDate(LocalDate.now());
+		aysesPetVisit.setDescription("Sneezy kuchu");
+		visitService.save(aysesPetVisit);
 		
 		Owner owner2 = new Owner();
 		owner2.setFirstName("Fatma");
