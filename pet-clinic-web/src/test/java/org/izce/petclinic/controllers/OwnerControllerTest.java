@@ -73,7 +73,7 @@ class OwnerControllerTest {
 	
 	@Test
 	void testProcessFindFormReturnMany() throws Exception {
-		when(ownerService.findAllByLastNameLike(anyString())).thenReturn(ownerList);
+		when(ownerService.findAllByLastNameContainingIgnoreCase(anyString())).thenReturn(ownerList);
 		
 		mockMvc.perform(get("/owners"))
 		.andExpect(status().isOk())
@@ -83,7 +83,7 @@ class OwnerControllerTest {
 	
 	@Test
 	void testProcessFindFormReturnOne() throws Exception {
-		when(ownerService.findAllByLastNameLike(anyString())).thenReturn(Lists.list(ownerList.get(0)));
+		when(ownerService.findAllByLastNameContainingIgnoreCase(anyString())).thenReturn(Lists.list(ownerList.get(0)));
 		
 		mockMvc.perform(get("/owners"))
 		.andExpect(status().is3xxRedirection())
