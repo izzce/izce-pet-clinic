@@ -91,6 +91,15 @@ class OwnerControllerTest {
 	}
 	
 	@Test
+	void testProcessFindOwnerByEmptyLastNameReturnAll() throws Exception {
+		when(ownerService.findAllByLastNameContainingIgnoreCase("")).thenReturn(ownerList);
+		
+		mockMvc.perform(get("/owners"))
+		.andExpect(status().isOk())
+		.andExpect(model().attribute("selections", hasSize(2)));
+	}
+	
+	@Test
 	void displayOwner() throws Exception {
 		when(ownerService.findById(anyLong())).thenReturn(ownerList.get(0));
 		
