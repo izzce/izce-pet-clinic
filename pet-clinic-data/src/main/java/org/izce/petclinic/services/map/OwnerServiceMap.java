@@ -1,5 +1,7 @@
 package org.izce.petclinic.services.map;
 
+import java.util.List;
+
 import org.izce.petclinic.model.Owner;
 import org.izce.petclinic.model.Pet;
 import org.izce.petclinic.services.OwnerService;
@@ -48,6 +50,12 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 			});
 		}
 		return super.save(owner);
+	}
+
+	@Override
+	public List<Owner> findAllByLastNameLike(String lastName) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

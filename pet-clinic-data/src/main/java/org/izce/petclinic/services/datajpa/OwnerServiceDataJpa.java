@@ -1,6 +1,7 @@
 package org.izce.petclinic.services.datajpa;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.izce.petclinic.model.Owner;
@@ -58,6 +59,11 @@ public class OwnerServiceDataJpa implements OwnerService {
 	@Override
 	public void deleteById(Long id) {
 		ownerRepository.deleteById(id);
+	}
+
+	@Override
+	public List<Owner> findAllByLastNameLike(String lastName) {
+		return ownerRepository.findAllByLastNameLike(lastName);
 	}
 
 }
