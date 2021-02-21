@@ -27,4 +27,8 @@ public class BaseEntity implements Serializable {
 	//private Timestamp creationTime;
 	//private Timestamp updateTime;
 	
+	public boolean isNew() {
+		return this.id == null;
+	}
+	
 }
