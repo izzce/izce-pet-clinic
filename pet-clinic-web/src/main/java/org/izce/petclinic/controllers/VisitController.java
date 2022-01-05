@@ -4,14 +4,13 @@ import java.beans.PropertyEditorSupport;
 import java.time.LocalDate;
 import java.util.Map;
 
-import javax.validation.Valid;
-
 import org.izce.petclinic.model.Pet;
 import org.izce.petclinic.model.Visit;
 import org.izce.petclinic.services.PetService;
 import org.izce.petclinic.services.VisitService;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -70,7 +69,7 @@ public class VisitController {
 
     // Spring MVC calls method loadPetWithVisit(...) before processNewVisitForm is called
     @PostMapping("/owners/{ownerId}/pets/{petId}/visits/new")
-    public String processNewVisitForm(@Valid Visit visit, BindingResult result) {
+    public String processNewVisitForm(@Validated Visit visit, BindingResult result) {
         if (result.hasErrors()) {
             return "pets/createOrUpdateVisitForm";
         } else {

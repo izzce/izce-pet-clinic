@@ -9,7 +9,7 @@ import java.util.Set;
 import org.izce.petclinic.model.BaseEntity;
 import org.izce.petclinic.services.CrudService;
 
-public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> implements CrudService<T, ID>{
+public abstract class AbstractMapService<T extends BaseEntity> implements CrudService<T, Long>{
 	protected Map<Long, T> map = new HashMap<>();
 	
 	@Override
@@ -18,7 +18,7 @@ public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> 
 	}
 	
 	@Override
-	public T findById(ID id) {
+	public T findById(Long id) {
 		return map.get(id);
 	}
 	
@@ -35,7 +35,7 @@ public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> 
 	}
 	
 	@Override
-	public void deleteById(ID id) {
+	public void deleteById(Long id) {
 		map.remove(id);
 	}
 	
