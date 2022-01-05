@@ -2,3 +2,8 @@
 
 # izce-pet-clinic
 Izce Pet Clinic Project
+
+
+GitHub personal access token (expires at april 2022): 
+
+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
