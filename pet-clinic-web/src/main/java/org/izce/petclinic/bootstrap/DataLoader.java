@@ -60,17 +60,9 @@ public class DataLoader implements CommandLineRunner {
 		PetType savedCatPetType = petTypeService.save(cat);
 		
 		// SPECIALTIES
-		Specialty radiology = new Specialty();
-		radiology.setDescription("radiology");
-		Specialty savedRadiology = specialtyService.save(radiology);
-		
-		Specialty surgery = new Specialty();
-		surgery.setDescription("surgery");
-		Specialty savedSurgery = specialtyService.save(surgery);
-		
-		Specialty dentistry = new Specialty();
-		dentistry.setDescription("dentistry");
-		Specialty savedDentistry = specialtyService.save(dentistry);
+		Specialty savedRadiology = specialtyService.save(new Specialty("radiology"));
+		Specialty savedSurgery = specialtyService.save(new Specialty("surgery"));
+		Specialty savedDentistry = specialtyService.save(new Specialty("dentistry"));
 		
 		Owner ownerProductOfBuilder = Owner.builder().id(1111L).firstName("first").lastName("last").address("adres").city("star").build();
 		
@@ -112,17 +104,34 @@ public class DataLoader implements CommandLineRunner {
 		
 		System.out.println("Loaded owners!");
 		
+		Vet vet0 = new Vet();
+		vet0.setFirstName("Zara");
+		vet0.setLastName("Lara");
+		vet0.getSpecialties().add(savedDentistry);
+		vetService.save(vet0);
+		
 		Vet vet1 = new Vet();
 		vet1.setFirstName("Hasan");
 		vet1.setLastName("Bakan");
 		vet1.getSpecialties().add(savedRadiology);
+		vet1.getSpecialties().add(savedSurgery);
 		vetService.save(vet1);
 		
 		Vet vet2 = new Vet();
 		vet2.setFirstName("Tarkan");
 		vet2.setLastName("Yakan");
 		vet2.getSpecialties().add(savedSurgery);
+		vet2.getSpecialties().add(savedDentistry);
+		
 		vetService.save(vet2);
+		
+		
+		Vet vet3 = new Vet();
+		vet3.setFirstName("Buray");
+		vet3.setLastName("Yatay");
+		// Test no specialty.
+		//vet3.getSpecialties().add(savedSurgery); 
+		vetService.save(vet3);
 		
 		System.out.println("Loaded vets!");
 

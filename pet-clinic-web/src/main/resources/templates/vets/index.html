@@ -7,22 +7,27 @@
 
 <body>
 <!--/*@thymesVar id="vet" type="org.izce.petclinic.model.Vet"*/-->
-<h2 th:text="'List of Vets'">List of Vets here!</h2>
+<h2 th:text="'List of Vets'" style="font-family: 'Tangerine', serif; font-size: 48px; text-shadow: 4px 4px 4px #aaa;">List of Vets here!</h2>
 
 <table class="table table-striped">
 	<thead>
 	<tr>
 		<th style="width: 100px;">Id</th>
-		<th style="width: 200px;">First Name</th>
-		<th style="width: 200px;">Last Name</th>
+		<th style="width: 200px;">Name</th>
+		<th style="width: 200px;">Specialties</th>
 	</tr>
 	</thead>
 	
 	<tbody>
 	<tr th:each="vet : ${vets}">
 		<td th:text="${vet.id}">1</td>
-		<td th:text="${vet.firstName}">Jane</td>
-		<td th:text="${vet.lastName}">Doe</td>
+		<td th:text="${vet.firstName + ' ' + vet.lastName}">Jane Doe</td>
+		<td> 
+			<ul th:each="specialty : ${vet.specialties}" style="padding-left: 1em; margin: 0em; ">
+				<li th:text="${specialty.description}">none</li>
+			</ul>
+			<ul th:if="${vet?.specialties?.size() == 0}" style="padding-left: 1em; margin: 0em;"><li>none</li></ul>
+		</td>
 	</tr>
 	</tbody>
 </table>
