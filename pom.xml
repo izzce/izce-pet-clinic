@@ -6,13 +6,13 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.6.2</version>
+		<version>2.7.8</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
 	<groupId>org.izce</groupId>
 	<artifactId>izce-pet-clinic</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<name>izce-pet-clinic</name>
 	<description>Izce Pet Clinic Project</description>
 	<packaging>pom</packaging>

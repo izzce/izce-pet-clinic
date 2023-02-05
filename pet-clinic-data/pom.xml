@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.izce</groupId>
 		<artifactId>izce-pet-clinic</artifactId>
-		<version>0.0.2-SNAPSHOT</version>
+		<version>0.0.3-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>pet-clinic-data</artifactId>
@@ -31,6 +31,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
 			<scope>runtime</scope>
 		</dependency>
 
